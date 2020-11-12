@@ -21,6 +21,8 @@ Vagrant.configure("2") do |config|
     infra.vm.network "forwarded_port", guest: 22, host: 2222, id: "ssh", disabled: true
     infra.vm.network "forwarded_port", guest: 22, host: 2000 # infra Node SSH
     infra.vm.network "forwarded_port", guest: 6443, host: 6443 # API Access
+    infra.vm.network "forwarded_port", guest: 2181, host: 2181 # Zoo Keeper
+    infra.vm.network "forwarded_port", guest: 9092, host: 9092 # kafka
     for p in 30000..30100 # expose NodePort IP's
       infra.vm.network "forwarded_port", guest: p, host: p, protocol: "tcp"
       end

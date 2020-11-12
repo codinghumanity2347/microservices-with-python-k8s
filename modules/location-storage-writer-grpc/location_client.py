@@ -10,7 +10,7 @@ import location_pb2_grpc
 
 
 def run():
-    with grpc.insecure_channel('localhost:5005') as channel:
+    with grpc.insecure_channel('localhost:30005') as channel:
         stub = location_pb2_grpc.LocationServiceStub(channel)
 
         timestamp = Timestamp()
