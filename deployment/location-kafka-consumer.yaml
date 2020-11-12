@@ -61,8 +61,8 @@ spec:
               name: db-env
               key: DB_PORT
         - name: KAFKA_ADD
-            valueFrom:
-              configMapKeyRef:
-                name: kafka-env
-                key: KAFKA_ADD
+          valueFrom:
+            configMapKeyRef:
+              name: kafka-env
+              key: KAFKA_ADD
       restartPolicy: Always
