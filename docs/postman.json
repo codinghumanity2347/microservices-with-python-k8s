@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "60ca0c4b-48b4-433a-bb83-5bcc5d5a5af1",
+		"name": "UdaConnect-CNCF",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Person-storage-writer-POST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"first_name\": \"user1-first-name\", \"last_name\": \"user1-last-name\", \"company_name\": \"Postman\"}"
+				},
+				"url": {
+					"raw": "http://localhost:30003/api/persons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "30003",
+					"path": [
+						"api",
+						"persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Person-storage-service-GET-ALL",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:30002/api/persons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "30002",
+					"path": [
+						"api",
+						"persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Person-storage-service-GET-By-ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:30002/api/persons/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "30002",
+					"path": [
+						"api",
+						"persons",
+						"5"
+					]
+				},
+				"description": "Person-storage-service-GET-By-ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Location-stroage-service-GET-ALL",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:30004/api/locations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "30004",
+					"path": [
+						"api",
+						"locations"
+					]
+				},
+				"description": "Location-stroage-service-GET-ALL"
+			},
+			"response": []
+		},
+		{
+			"name": "Location-storage-service-GET-By-ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:30004/api/location/29",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "30004",
+					"path": [
+						"api",
+						"location",
+						"29"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Connection-storage-service-GET",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:30006/api/persons/1/connection?distance=10&end_date=2020-01-01&start_date=2020-12-30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "30006",
+					"path": [
+						"api",
+						"persons",
+						"1",
+						"connection"
+					],
+					"query": [
+						{
+							"key": "distance",
+							"value": "10"
+						},
+						{
+							"key": "end_date",
+							"value": "2020-01-01"
+						},
+						{
+							"key": "start_date",
+							"value": "2020-12-30"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

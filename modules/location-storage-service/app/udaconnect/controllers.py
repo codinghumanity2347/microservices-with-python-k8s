@@ -7,12 +7,13 @@ from app.udaconnect.models import Location
 from app.udaconnect.schemas import LocationSchema
 from app.udaconnect.services import LocationService
 
-api = Namespace("UdaConnect-Location", description="Connections via geolocation.")  # noqa
-resource_fields = api.model("Location Model", {
+api = Namespace("UdaConnect-Location", description="Read Operations related to Locations in UdaConnect.")  # noqa
+location_model = api.model("Location Model", {
     "person_id": fields.Integer(description='person_id', required=True),
     "creation_time": fields.String(description='creation_time', required=True),
     "latitude": fields.String(description='latitude', required=True),
-    "longitude": fields.String(description='longitude', required=True)
+    "longitude": fields.String(description='longitude', required=True),
+    "id": fields.Integer(description='person_id', required=True)
 })
 
 
@@ -21,7 +22,10 @@ resource_fields = api.model("Location Model", {
 class LocationResource(Resource):
 
     @responds(schema=LocationSchema)
+    @api.response(200, 'Success', location_model)
+    @api.response(404, 'Location not found')
     def get(self, location_id) -> Location:
+        """Returns a Details of Location"""
         location: Location = LocationService.retrieve(location_id)
         return location
 
@@ -30,6 +34,8 @@ class LocationResource(Resource):
 class LocationsResource(Resource):
 
     @responds(schema=LocationSchema, many=True)
+    @api.response(200, 'Success', [location_model])
     def get(self) -> List[Location]:
+        """Returns a List of Locations"""
         locations: List[Location] = LocationService.retrieve_all()
         return locations
