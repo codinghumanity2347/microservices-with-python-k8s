@@ -113,3 +113,8 @@ These pages should also load on your web browser:
 |  person-storage-writer    | 30003 |`http://localhost:30003/api/` |
 |  location-storage-service | 30004 | `http://localhost:30004/api/` |
 |connection-storage-service|30006 |`http://localhost:30006/api/`|
+
+
+References/Credits:
+1. [kafka-on-kubernetes](https://www.magalix.com/blog/kafka-on-kubernetes-and-deploying-best-practice)
+2. [Udacity Starter Code](https://github.com/udacity/nd064-c2-message-passing-projects-starter)
