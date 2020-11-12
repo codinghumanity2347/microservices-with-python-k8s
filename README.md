@@ -1,5 +1,5 @@
 # microservices-with-python-k8s
-Application Demonstrates how micro services can be implemented with different message passing techniques. This project refactored the  starter code available at [udacity/nd064-c2-message-passing-projects-starter](https://github.com/udacity/nd064-c2-message-passing-projects-starter)
+Application Demonstrates how micro services can be implemented with different message passing techniques. This project has refactored the starter code available at [udacity/nd064-c2-message-passing-projects-starter](https://github.com/udacity/nd064-c2-message-passing-projects-starter).
 
 ## Overview
 ### Background
